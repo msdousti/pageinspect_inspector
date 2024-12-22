@@ -24,9 +24,9 @@
             <div class="item" {% if item.child %}data--child="page-{{ item.child.id }}"{% endif %}>
                 <ul class="item-content">
                   <li><label>Value: </label>
-                    {% if var is iterable and var is not string %}
+                    {% if item.value is iterable %}
                     [{% for val in item.value %}
-                    <span style="width:100px; word-wrap:break-word; display:inline-block;"> {{ val }}</span></br>
+                    <span style="word-wrap:break-word; display:inline-block;"> {{ val }}</span>
                     {% endfor %}]
                     {% else %}
                     {{ val }}
